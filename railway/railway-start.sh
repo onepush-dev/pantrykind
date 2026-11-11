@@ -18,4 +18,4 @@ print('[railway] owner account', 'created' if created else 'password synced', 'f
 fi
 # Opt-in inbox reminders: upstream asks for both commands every minute.
 ( while true; do sleep 60; python manage.py enqueue_reminders >/dev/null 2>&1; python manage.py reminder_worker --limit 100 >/dev/null 2>&1; done ) &
-exec python serve.py
+exec python /app/railway/serve_railway.py

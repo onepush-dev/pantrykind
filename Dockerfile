@@ -7,7 +7,7 @@ ARG PANTRYKIND_REF=aa2b5a0038f83f2984377c593f6f60af38862ecb
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
     BIND_HOST=0.0.0.0 PORT=8000 DEBUG=false HTTPS_ONLY=true \
     DATABASE_PATH=/data/pantry.sqlite3 \
-    DJANGO_SETTINGS_MODULE=railway_settings PYTHONPATH=/app/railway \
+    DJANGO_SETTINGS_MODULE=railway_settings PYTHONPATH=/app/railway:/app \
     PANTRYKIND_OWNER_USERNAME=owner PANTRYKIND_ALLOW_SIGNUP=false
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/* \
